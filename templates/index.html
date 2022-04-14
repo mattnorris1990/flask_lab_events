@@ -1,0 +1,64 @@
+{% extends "home.html" %}
+
+{% block content %}
+
+<form action="/addevent" method="post"> 
+    
+    <label for="add_date">Add date</label>
+    <input type="date" name="adddate" id="adddate"> 
+
+    <label for="add_event_name">Add event name<label>
+    <input type="text" name="eventname" id="eventname">
+    
+    <label for="number_of_guests">Number of guests</label>
+    <input type="text" name="numberofguests" id="numberofguests">
+    
+    <label for="Room Location">Room Location</label>
+    <select name="roomlocation" id="roomlocation">
+        <option value="Room 3a">Room 3a</option>
+        <option value="Room 2b (or not 2b)">Room (2b or not 2b)</option>
+        <option value="Stuart and John Memorial Auditorium">Stuart and John Memorial Auditorium</option>
+    </select>
+    
+    <label for="description">Description</label>
+    <textarea name="description" rows="2" cols="30"></textarea>
+
+    <label for="recurring">Recurring event?</label>
+    <select name="recurring" id="recurring">
+        <option value="True">Yes</option>
+        <option value="False">No</option>
+    </select>
+    
+    <input type="submit" value="Add Task">
+  </form>
+
+{% for event in events_list %}
+    <div class = "event_block">
+        <p>
+            {{ event.date }}
+        </p>
+        <p>
+            {{ event.name }}
+        </p>
+        <p>
+            {{event.description}}
+        </p>
+        <p>
+            {{ event.room_location }}: {{ event.number_of_guests }} guests
+        </p>
+            {% if event.recurring %}
+                <div class="recurring">
+                    Recurring event
+                </div>
+            {% endif %}
+        <p>
+            <button type="button" class="delete-event">
+                <a href="/allevents/delete/{{events_list.index(event)}}">Delete Event </a>
+            </button>
+        </p>
+        <hr>
+    </div>
+
+{% endfor %}
+
+{% endblock %}
