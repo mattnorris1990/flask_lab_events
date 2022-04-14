@@ -4,21 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway&family=Righteous&family=Rubik+Moonrocks&display=swap');
+        </style>
     <title>{{ title }} - The Hopper: Edinburgh's premier arts venue</title>
 </head>
 <body>
     <header class="header_template">
-        <h1>The Hopper: Edinburgh's premier arts venue</h1>
-        <ul>
-            <li>
-                <a href="/all-events">All events</a>
-            </li>
-            <li>
-                <a href="/contact">Contact</a>
-            </li>
-        </ul>
+        <hgroup>
+            <h1 id="logo">The Hopper</h1>
+            <h2 id="tagline">Edinburgh's premier arts venue</h2>
+        </hgroup>
+        <nav class="navbar">
+            <ul>
+                <li>
+                    <a href="/all-events">All events</a>
+                </li>
+                <li>
+                    <a href="/contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
 </header>
-<hr>
+
 {% block content %}
 
 {% endblock %}

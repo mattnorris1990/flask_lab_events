@@ -1,0 +1,100 @@
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+.header_template {
+    background-color: #54aa8c;
+    padding: 1%;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+
+}
+
+#logo {
+    font-family: 'Rubik Moonrocks', cursive;
+    color: #FFC6BD;
+    font-size: 500%;
+    margin: 0;
+}
+
+#tagline {
+    font-family: 'Righteous', cursive;
+    margin: 0;
+    margin-left: 1%;
+    color: #FFC6BD;
+}
+
+.navbar > ul {
+    list-style: none;
+
+}
+
+.navbar > ul {
+    color: white;
+    /* text-decoration: none; */
+}
+
+#add-event-form {
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    padding: 2%;
+    display: grid;
+    align-items: center;
+    grid-template-areas:
+    'date name'
+    'number room'
+    'description description'
+    'recur submit';
+    border: 9px black dotted;
+    border-radius: 10px;
+    background: #FD565A;
+}
+#add-event-form > * {
+    padding: 2%;
+}
+
+#add-date {
+    grid-area: date;
+}
+
+#add-event-name {
+    grid-area: name;
+
+}
+
+#add-guest-number {
+    grid-area: number;
+}
+
+#room-location {
+    grid-area: room;
+}
+
+#event-description {
+    grid-area: description;
+}
+
+#recurring-button {
+    grid-area: recur;
+}
+
+#submit-button {  
+    grid-area: submit;
+}
+
+#big-button {
+    padding: 5%;
+    font-family: 'Rubik Moonrocks', cursive;
+    font-size: 300%;
+    background-color: #00E07A;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px 0 #002011, 0 6px 20px 0 #00361d;
+}
+
+.box-color {
+    background-color: #96D993;
+}

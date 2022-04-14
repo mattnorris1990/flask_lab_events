@@ -2,35 +2,49 @@
 
 {% block content %}
 
-<form action="/addevent" method="post"> 
-    
-    <label for="add_date">Add date</label>
-    <input type="date" name="adddate" id="adddate"> 
+<form action="/addevent" method="post" id="add-event-form"> 
+    <div id="add-date">
+        <h3><label for="add_date">Add date</label></h3>
+        <input type="date" name="adddate" id="adddate" class="box-color"> 
+    </div>
 
-    <label for="add_event_name">Add event name<label>
-    <input type="text" name="eventname" id="eventname">
-    
-    <label for="number_of_guests">Number of guests</label>
-    <input type="text" name="numberofguests" id="numberofguests">
-    
-    <label for="Room Location">Room Location</label>
-    <select name="roomlocation" id="roomlocation">
-        <option value="Room 3a">Room 3a</option>
-        <option value="Room 2b (or not 2b)">Room (2b or not 2b)</option>
-        <option value="Stuart and John Memorial Auditorium">Stuart and John Memorial Auditorium</option>
-    </select>
-    
-    <label for="description">Description</label>
-    <textarea name="description" rows="2" cols="30"></textarea>
+    <div id="add-event-name">
+        <h3><label for="add_event_name">Add event name</label></h3>
+        <input type="text" name="eventname" id="eventname" class="box-color">
+    </div>
 
-    <label for="recurring">Recurring event?</label>
-    <select name="recurring" id="recurring">
-        <option value="True">Yes</option>
-        <option value="False">No</option>
-    </select>
+    <div id="add-guest-number">
+        <h3><label for="number_of_guests">Number of guests</label></h3>
+        <input type="text" name="numberofguests" id="numberofguests" class="box-color">
+    </div>
     
-    <input type="submit" value="Add Task">
+    <div id="room-location">
+        <h3><label for="Room Location">Room Location</label></h3>
+        <select name="roomlocation" id="roomlocation" class="box-color">
+            <option value="Room 3a">Room 3a</option>
+            <option value="Room 2b (or not 2b)">Room (2b or not 2b)</option>
+            <option value="Stuart and John Memorial Auditorium">Stuart and John Memorial Auditorium</option>
+        </select>
+    </div>
+
+    <div id="event-description">
+    <h3><label for="description">Description</label></h3>
+        <textarea name="description" rows="10" cols="60" class="box-color"></textarea>
+    </div>
+
+    <div id="recurring-button">
+    <h3><label for="recurring">Recurring event?</label></h3>
+        <select name="recurring" id="recurring" class="box-color">
+            <option value="True">Yes</option>
+            <option value="False">No</option>
+        </select>
+    </div>
+
+    <div id="submit-button">
+        <input type="submit" value="Add Task" id="big-button">
+    </div>
   </form>
+
 
 {% for event in events_list %}
     <div class = "event_block">
